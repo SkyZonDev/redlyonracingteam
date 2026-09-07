@@ -1,15 +1,16 @@
-import type { Metadata } from "next";
 import { partenairesPage } from "@/content/pages/partenaires";
 import { site } from "@/content/site";
 import { getPartenairesActifs, getPartenairesParPalier } from "@/lib/content";
+import { pageMetadata } from "@/lib/seo";
 import { CtaLink } from "../_components/cta-link";
 import { Frame } from "../_components/frame";
 import { PartenairesPaliers } from "../_components/partenaires/paliers";
 
-export const metadata: Metadata = {
-  title: `Partenaires - ${site.nom}`,
+export const metadata = pageMetadata({
+  title: "Partenaires",
   description: partenairesPage.chapo,
-};
+  path: "/partenaires",
+});
 
 export default function PartenairesPage() {
   const partenaires = getPartenairesActifs();

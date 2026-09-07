@@ -1,13 +1,14 @@
-import type { Metadata } from "next";
 import { nousRejoindre } from "@/content/pages/nous-rejoindre";
 import { site } from "@/content/site";
+import { pageMetadata } from "@/lib/seo";
 import { Frame } from "../_components/frame";
 import { ContactPartenaireForm } from "../_components/partenaires/contact-form";
 
-export const metadata: Metadata = {
-  title: `Devenir partenaire - ${site.nom}`,
+export const metadata = pageMetadata({
+  title: "Devenir partenaire",
   description: nousRejoindre.chapo,
-};
+  path: "/nous-rejoindre",
+});
 
 export default function NousRejoindrePage() {
   return (

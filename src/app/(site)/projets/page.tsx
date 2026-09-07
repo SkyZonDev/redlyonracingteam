@@ -1,15 +1,15 @@
-import type { Metadata } from "next";
 import Link from "next/link";
 import { projetsPage } from "@/content/pages/projets";
-import { site } from "@/content/site";
 import { getProjets } from "@/lib/content";
+import { pageMetadata } from "@/lib/seo";
 import { Frame } from "../_components/frame";
 import { ProjetProgress } from "../_components/projets/projet-progress";
 
-export const metadata: Metadata = {
-  title: `Projets - ${site.nom}`,
+export const metadata = pageMetadata({
+  title: "Projets",
   description: projetsPage.chapo,
-};
+  path: "/projets",
+});
 
 export default function ProjetsPage() {
   const projets = getProjets();

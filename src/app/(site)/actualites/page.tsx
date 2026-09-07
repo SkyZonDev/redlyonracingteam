@@ -1,13 +1,13 @@
-import type { Metadata } from "next";
 import Link from "next/link";
-import { site } from "@/content/site";
 import { getActualitesRecentes } from "@/lib/content";
+import { pageMetadata } from "@/lib/seo";
 import { PageShell } from "../_components/page-shell";
 
-export const metadata: Metadata = {
-  title: `Actualités - ${site.nom}`,
+export const metadata = pageMetadata({
+  title: "Actualités",
   description: "Le journal de bord de RedLyon Racing Team.",
-};
+  path: "/actualites",
+});
 
 export default function ActualitesPage() {
   const articles = getActualitesRecentes();

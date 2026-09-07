@@ -1,9 +1,12 @@
+import { accueil } from "@/content/pages/accueil";
+import { site } from "@/content/site";
 import {
   getActualitesRecentes,
   getPartenairesActifs,
   getPreuve,
   getProjets,
 } from "@/lib/content";
+import { pageMetadata } from "@/lib/seo";
 import { Actualites } from "./_components/landing/actualites";
 import { Endplates } from "./_components/landing/endplates";
 import { EquipeBref } from "./_components/landing/equipe-bref";
@@ -11,6 +14,13 @@ import { Hero } from "./_components/landing/hero";
 import { Partenaires } from "./_components/landing/partenaires";
 import { Preuve } from "./_components/landing/preuve";
 import { ProjetsEnCours } from "./_components/landing/projets-en-cours";
+
+export const metadata = pageMetadata({
+  title: `${site.nom} · ${site.ecole}, ${site.ville}`,
+  description: accueil.chapo,
+  path: "/",
+  absoluteTitle: true,
+});
 
 export default function Home() {
   const projets = getProjets();

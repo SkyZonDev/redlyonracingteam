@@ -1,11 +1,12 @@
-import type { Metadata } from "next";
 import { site } from "@/content/site";
+import { pageMetadata } from "@/lib/seo";
 import { PageShell } from "../_components/page-shell";
 
-export const metadata: Metadata = {
-  title: `Contact - ${site.nom}`,
+export const metadata = pageMetadata({
+  title: "Contact",
   description: site.description,
-};
+  path: "/contact",
+});
 
 export default function ContactPage() {
   return (

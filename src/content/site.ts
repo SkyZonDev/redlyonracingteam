@@ -8,6 +8,7 @@ export const site = {
   anneeCreation: 2025,
   structure: "Association étudiante · loi 1901",
   email: "contact@redlyonracingteam.com",
+  url: "https://redlyonracingteam.com",
   description:
     "Association étudiante de sport automobile à l'ESME, Lyon. Un atelier, un chantier en cours, pas de palmarès.",
   nav: [

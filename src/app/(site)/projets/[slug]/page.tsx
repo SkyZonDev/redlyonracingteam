@@ -1,10 +1,11 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { site } from "@/content/site";
 import { getProjet, getProjets } from "@/lib/content";
+import { pageMetadata, projetJsonLd } from "@/lib/seo";
 import { CtaLink } from "../../_components/cta-link";
 import { Frame } from "../../_components/frame";
+import { JsonLd } from "../../_components/json-ld";
 import { PhotoFrame } from "../../_components/photo-frame";
 import { ProjetBudget } from "../../_components/projets/projet-budget";
 import {
@@ -24,10 +25,13 @@ export async function generateMetadata({
   const { slug } = await params;
   const projet = getProjet(slug);
   if (!projet) return {};
-  return {
-    title: `${projet.titre} - ${site.nom}`,
+  return pageMetadata({
+    title: projet.titre,
     description: projet.resume,
-  };
+    path: `/projets/${projet.slug}`,
+    image: projet.image?.src,
+    type: "article",
+  });
 }
 
 export default async function ProjetPage({
@@ -39,6 +43,7 @@ export default async function ProjetPage({
 
   return (
     <div className="pt-28 pb-20 md:pt-32">
+      <JsonLd data={projetJsonLd(projet)} />
       <Frame className="pb-14 md:pb-20">
         <p className="font-mono text-[10px] tracking-[0.22em] text-[#666666]">
           Projet
