@@ -1,4 +1,9 @@
-export const timeline = [
+export const timeline: {
+  date: string;
+  title: string;
+  description: string;
+  highlight?: boolean;
+}[] = [
   {
     date: "Mai 2025",
     title: "Naissance du projet",
@@ -31,4 +36,4 @@ export const timeline = [
       "Les pilotes représentent RedLyon Racing Team sur la scène virtuelle.",
     highlight: true,
   },
-] as const;
+];
