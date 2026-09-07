@@ -186,14 +186,6 @@ export const prototypeBiplace: Projet = {
       uniqueness: "Approche pragmatique sur le coût et la fiabilité",
     },
   ],
-  gallery: [
-    {
-      type: "image",
-      src: "/projects/prototype/chassis-cao.png",
-      alt: "CAO du châssis",
-      caption: "Modélisation 3D du châssis tubulaire en cours de conception",
-    },
-  ],
   technologies: [
     "SolidWorks / CATIA",
     "Simulation CFD",

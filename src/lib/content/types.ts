@@ -40,13 +40,6 @@ export type ProjetInnovation = {
   uniqueness: string;
 };
 
-export type ProjetGalleryItem = {
-  type: "image" | "video";
-  src: string;
-  alt: string;
-  caption: string;
-};
-
 export type ProjetBudgetLigne = {
   category: string;
   amount: string;
@@ -76,7 +69,6 @@ export type Projet = {
   challenges: string[];
   achievements: string[];
   innovations: ProjetInnovation[];
-  gallery: ProjetGalleryItem[];
   technologies: string[];
   budget: {
     total: string;
